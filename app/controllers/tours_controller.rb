@@ -3,7 +3,7 @@ class ToursController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tours = policy_scope(Restaurant).order(created_at: :asc)
+    @tours = policy_scope(Tour).order(created_at: :asc)
   end
 
   def show
