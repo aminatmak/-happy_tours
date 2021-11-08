@@ -1,6 +1,7 @@
 class Tour < ApplicationRecord
   has_many :users
   has_many :bookings
+  has_one_attached :photo
 
   validates :title, presence: true
   validates :description, presence: true
