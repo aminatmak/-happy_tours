@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
   def index
     @tours = policy_scope(Tour).order(created_at: :asc)
