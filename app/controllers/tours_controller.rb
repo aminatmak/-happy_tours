@@ -18,6 +18,8 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tour_params)
+    @tour.user = current_user
+    authorize @tour
     if @tour.save
       redirect_to @tour, notice: 'New tour created!'
     else

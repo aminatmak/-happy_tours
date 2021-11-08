@@ -1,5 +1,5 @@
 class Tour < ApplicationRecord
-  has_many :users
+  belongs_to :user
   has_many :bookings
   has_many_attached :photos
 
