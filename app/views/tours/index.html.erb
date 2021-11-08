@@ -15,8 +15,6 @@
               <p><%= tour.description %></p>
               <%= link_to 'Show', tour, class: 'btn btn-xs btn-primary' %>
             </div>
-            <h2 class="card-trip-pricing mx-3"><%= tour.price %></h2>
-            <img src="#" class="card-trip-user avatar-bordered" />
             <% if policy(tour).edit? %>
               <%= link_to 'Edit', edit_tour_path(tour), class: 'btn btn-warning' %>
             <% end %>
@@ -25,6 +23,8 @@
             <% if policy(tour).destroy? %>
               <%= link_to 'Destroy', tour, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
             <% end %>
+            <h2 class="card-trip-pricing mx-3"><%= tour.price %></h2>
+            <img src="#" class="card-trip-user avatar-bordered" />
     <% end %>
         </div>
       </div>
