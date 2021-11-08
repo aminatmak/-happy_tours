@@ -1,12 +1,15 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
+
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tours = Tour.all
+    @tours = policy_scope(Tour).order(created_at: :asc)
   end
 
   def show
-    @tour = Tour.find(params[:id])
+    authorize @tour
+    # set_tour method is responsible to find
   end
 
   def new
@@ -14,7 +17,8 @@ class ToursController < ApplicationController
   end
 
   def create
-    @tour = Tour.new(list_params)
+
+    @tour = Tour.new(tour_params)
     if @tour.save
       redirect_to @tour, notice: 'New tour created!'
     else
@@ -31,7 +35,6 @@ class ToursController < ApplicationController
   end
 
   def destroy
-    @tour = Tour.find(params[:id])
     @tour.destroy
     redirect_to root_path
   end
