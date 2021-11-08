@@ -13,6 +13,7 @@
           <%= r.input :price %>
           <%= r.input :start_date, as: :date %>
           <%= r.input :end_date, as: :date %>
+          <%= r.input :photos, as: :file, input_html: { multiple: true } %>
         </div>
 
         <div class="form-actions">
