@@ -1,5 +1,4 @@
 class ToursController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
@@ -17,7 +16,6 @@ class ToursController < ApplicationController
   end
 
   def create
-
     @tour = Tour.new(tour_params)
     if @tour.save
       redirect_to @tour, notice: 'New tour created!'
