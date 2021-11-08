@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= simple_form_for(@tour) do |r| %>
+        <%= r.error_notification %>
+        <%= r.error_notification message: r.object.errors[:base].to_sentence if r.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= r.input :title %>
+          <%= r.input :description %>
+          <%= r.input :category, collection: Tour::CATEGORIES %>
+          <%= r.input :price %>
+          <%= r.input :start_date, as: :date %>
+          <%= r.input :end_date, as: :date %>
+        </div>
+
+        <div class="form-actions">
+          <%= r.button :submit, class: "btn btn-success" %>
+          <%= link_to 'Back', tours_path, class: "btn btn-secondary my-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
