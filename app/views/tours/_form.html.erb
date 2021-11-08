@@ -1,0 +1,15 @@
+<%= simple_form_for(tour) do |f| %>
+
+  <%= f.input :photos, as: :file %>
+  <%= f.input :image %>
+  <%= f.input  :caption %>
+  <%= f.input  :title %>
+  <%= f.input  :category %>
+  <%= f.input  :price %>
+  <%= f.input  :description %>
+  <%= f.input  :start_date %>
+  <%= f.input  :end_date %>
+  <%= f.input  :user_id%>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button :submit %>
+<% end %>

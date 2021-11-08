@@ -13,6 +13,7 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
+    authorize @tour
   end
 
   def create
