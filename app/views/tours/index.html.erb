@@ -1,33 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
+  <%= link_to 'Home Page', root_path, class: "btn btn-secondary mb-4" %> |
   <%= link_to 'Add a Tour', new_tour_path(@tour), class: "btn btn-primary mb-4" %>
-  <%= link_to 'Home Page', root_path, class: "btn btn-secondary mb-4" %>
   <h1>Best Tours to Explore</h1>
+
   <div class="cards">
     <% @tours.each do |tour| %>
       <div class="card-trip position-relative">
         <img src="https://images.unsplash.com/photo-1549944850-84e00be4203b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2268&q=80" />
         <div class="card-trip-infos">
-            <div>
-              <h2><%= tour.title %></h2>
-              <h3><%= tour.category %></h3>
-              <p><%= tour.description %></p>
-              <%= link_to 'Show', tour, class: 'btn btn-xs btn-primary' %>
-            </div>
+
+          <div>
+            <h2><%= tour.title %></h2>
+            <h3><%= tour.category %></h3>
+            <p><%= tour.description %></p>
+          </div>
+
+          <h2 class="card-trip-pricing mx-3">AED <%= tour.price %></h2>
+          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80" class="card-trip-user avatar-bordered" />
+
+          <div class="justify-content-center">
+            <%= link_to 'Details', tour, class: 'btn btn-xs btn-primary' %> |
             <% if policy(tour).edit? %>
               <%= link_to 'Edit', edit_tour_path(tour), class: 'btn btn-warning' %>
-            <% end %>
+            <% end %> |
 
             <!-- Only the owner of the tour can destroy -->
             <% if policy(tour).destroy? %>
               <%= link_to 'Destroy', tour, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
             <% end %>
-            <h2 class="card-trip-pricing mx-3"><%= tour.price %></h2>
-            <img src="#" class="card-trip-user avatar-bordered" />
-    <% end %>
+          </div>
+
         </div>
       </div>
+    <% end %>
   </div>
 </div>
 
