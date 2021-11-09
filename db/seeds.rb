@@ -33,7 +33,7 @@ tour1 = Tour.new(
   start_date: '2021/November/23',
   end_date: '2021/November/24',
   user: user,
-  # address: "Al Barsha"
+  address: "Sharja, UAE"
 )
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Green_winter.jpg/1024px-Green_winter.jpg')
 tour1.photos.attach(io: file, filename: 'forest.jpg', content_type: 'image/jpg')
@@ -49,7 +49,7 @@ tour2 = Tour.new(
   start_date: '2021/November/23',
   end_date: '2021/November/23',
   user: user,
-  # address: "Al Barsha"
+  address: "Abu Dhabi, UAE"
 )
 file =
 URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beach-quotes-1559667853.jpg')
@@ -66,7 +66,7 @@ tour3 = Tour.new(
   start_date: '2021/November/23',
   end_date: '2021/November/24',
   user: user,
-  # address: "Al Barsha"
+  address: "Dubai Marina"
 )
 file =
 URI.open('https://www.izkiz.net/wp-content/uploads/2017/01/DSC_7356.jpg')
@@ -83,7 +83,7 @@ tour4 = Tour.new(
   start_date: '2021/November/23',
   end_date: '2021/November/24',
   user: user,
-  # address: "Al Barsha"
+  address: "Burj Khalifa, Dubai"
 )
 file =
 URI.open('https://www.tripsavvy.com/thmb/I2PeYOSYosY1DGV4X1ZRLdqUoN0=/2000x1500/filters:fill(auto,1)/car-traveling-along-winding-road--maui--hawaii--america--usa-737142515-9d7096b173654472968075d805273c8f.jpg')
@@ -100,7 +100,7 @@ tour5 = Tour.new(
   start_date: '2021/November/23',
   end_date: '2021/November/24',
   user: user,
-  # address: "Al Barsha"
+  address: "Downtown Dubai"
 )
 file =
 URI.open('https://curlytales.com/wp-content/uploads/2020/10/Gokart.jpg')

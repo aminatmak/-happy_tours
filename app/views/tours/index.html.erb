@@ -1,41 +1,49 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1600587193650-6a6615b3e95c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80);">
+  <h1>HAPPY TOURS</h1>
+  <p>Making unforgettable adventures!</p>
+</div>
+
 <p id="notice"><%= notice %></p>
-
-<div class="container">
-  <%= link_to 'Home Page', root_path, class: "btn btn-secondary mb-4" %> |
-  <%= link_to 'Add a Tour', new_tour_path(@tour), class: "btn btn-primary mb-4" %>
-  <h1>Best Tours to Explore</h1>
-
-  <div class="cards">
-    <% @tours.each do |tour| %>
-      <div class="card-trip position-relative">
-        <img src="https://images.unsplash.com/photo-1549944850-84e00be4203b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2268&q=80" />
-        <div class="card-trip-infos">
-
-          <div>
-            <h2><%= tour.title %></h2>
-            <h3><%= tour.category %></h3>
-            <p><%= tour.description %></p>
-          </div>
-
-          <h2 class="card-trip-pricing mx-3">AED <%= tour.price %></h2>
-          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80" class="card-trip-user avatar-bordered" />
-
-          <div class="justify-content-center">
-            <%= link_to 'Details', tour, class: 'btn btn-xs btn-primary' %> |
-            <% if policy(tour).edit? %>
-              <%= link_to 'Edit', edit_tour_path(tour), class: 'btn btn-warning' %>
-            <% end %> |
-
-            <!-- Only the owner of the tour can destroy -->
-            <% if policy(tour).destroy? %>
-              <%= link_to 'Destroy', tour, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </div>
-
-        </div>
+<div class="d-flex">
+  <div class="container">
+      <h1>Discover Exicitng Tours</h1>
+      <div class="notice-header p-2 rounded">
+        <i class="fas fa-info-circle"></i>
+        <%# <p>Your wellbeing comes first</p> %>
+        <p>Favoring small-group tours, our adventure vacation packages are the perfect size for meeting new people while allowing for an intimate exploration of some of the world’s most exciting destinations</p>
       </div>
-    <% end %>
+
+    <div class="cards">
+      <% @tours.each do |tour| %>
+        <div class="card-trip position-relative">
+          <%= cl_image_tag tour.photos.first.key %>
+          <div class="card-trip-infos">
+
+            <div>
+              <h2><%= tour.title %></h2>
+              <h3><%= tour.category %></h3>
+              <p><%= tour.description %></p>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80" class="card-trip-user avatar-bordered" />
+
+            <div>
+
+              <div class="d-flex justify-content-center p-3">
+                <h2 class="card-trip-pricing mx-3">AED <%= tour.price %></h2>
+                <%= link_to 'Details', tour, class: 'btn btn-primary' %>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <div id="map"
+      style="width: 60%; height: 100vh; position: sticky; top: 0;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
 
       <%# if policy(Tour).new? %>
