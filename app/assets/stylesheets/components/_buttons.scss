@@ -20,6 +20,17 @@
   transition: background 0.3s ease;
 }
 
+.btn-purple {
+  background: #6f42c1;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.btn-purple:hover {
+  background-color: #af4c59; /* Green */
+  color: white;
+}
+
 .btn-flat:hover {
   background: #1BCB7F;
   color: white;
