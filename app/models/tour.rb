@@ -8,6 +8,7 @@ class Tour < ApplicationRecord
   validates :price, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  CATEGORIES = ["indoors", "outdoors", "sightseeing", "sport", "adventure", "historical"]
+  CATEGORIES = ["Port of Call Tours", "Half-day Tours", "Shopping Malls",
+                "Extreme", "Bus Tours", "Theme Parks"]
   validates :category, inclusion: { in: CATEGORIES }
 end
