@@ -28,14 +28,17 @@ class ToursController < ApplicationController
   end
 
   def edit
+    authorize @tour
   end
 
   def update
+    authorize @tour
     @tour.update(tour_params)
     redirect_to @tour
   end
 
   def destroy
+    authorize @tour
     @tour.destroy
     redirect_to root_path
   end
