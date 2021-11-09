@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2371&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1600587193650-6a6615b3e95c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80);">
   <h1>HAPPY TOURS</h1>
   <p>Making unforgettable adventures!</p>
 </div>
@@ -16,7 +16,7 @@
     <div class="cards">
       <% @tours.each do |tour| %>
         <div class="card-trip position-relative">
-          <img src="https://images.unsplash.com/photo-1549944850-84e00be4203b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2268&q=80" />
+          <%= cl_image_tag tour.photos.first.key %>
           <div class="card-trip-infos">
 
             <div>
