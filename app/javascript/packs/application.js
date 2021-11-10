@@ -32,3 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
 });
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();

@@ -8,8 +8,8 @@
 require "open-uri"
 
 puts "Creating a user"
-Tour.destroy_all
 User.destroy_all
+Tour.destroy_all
 
 user = User.create(
   email: "zuckerberg@gmail.com",
@@ -30,8 +30,8 @@ tour1 = Tour.new(
   category: 'Extreme',
   price: 50,
   description: 'You will hunt fairies.',
-  start_date: '2021/November/23',
-  end_date: '2021/November/24',
+  start_date: '2021/November/15',
+  end_date: '2021/November/20',
   user: user,
   address: "Sharja, UAE"
 )
@@ -46,7 +46,7 @@ tour2 = Tour.new(
   category: 'Half-day Tours',
   price: 10,
   description: 'Frolick at the beach!',
-  start_date: '2021/November/23',
+  start_date: '2021/November/18',
   end_date: '2021/November/23',
   user: user,
   address: "Abu Dhabi, UAE"
@@ -63,8 +63,8 @@ tour3 = Tour.new(
   category: 'Extreme',
   price: 20,
   description: 'Climb to the top!',
-  start_date: '2021/November/23',
-  end_date: '2021/November/24',
+  start_date: '2021/November/11',
+  end_date: '2021/November/25',
   user: user,
   address: "Dubai Marina"
 )
@@ -97,8 +97,8 @@ tour5 = Tour.new(
   category: 'Theme Parks',
   price: 30,
   description: 'Get an adrenaline rush!',
-  start_date: '2021/November/23',
-  end_date: '2021/November/24',
+  start_date: '2021/December/2',
+  end_date: '2021/December/15',
   user: user,
   address: "Downtown Dubai"
 )
@@ -108,5 +108,24 @@ tour5.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 tour5.user = user
 tour5.save
 p tour5
+
+puts "Done with the tours"
+
+tour6 = Tour.new(
+  title: 'Dubai Marina Yacht Tour',
+  category: 'Half-day Tours',
+  price: 250,
+  description: 'Enjoy a taste of A-lister life without the high price tag—or anything to organize on your part—on this shared deluxe yacht cruise off Dubai. All you need do is step aboard, lounge on deck, and watch Dubai’s skyline and sights such as the Atlantis The Palm glide by; all as you enjoy the cool breezes and either breakfast or a barbecue meal depending on your chosen time slot.',
+  start_date: '2021/December/1',
+  end_date: '2022/January/15',
+  user: user,
+  address: "Palm Jumeirah"
+)
+file =
+URI.open('https://images.unsplash.com/photo-1562595410-4859d718375e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80')
+tour6.photos.attach(io: file, filename: 'yacht.jpg', content_type: 'image/jpg')
+tour6.user = user
+tour6.save
+p tour6
 
 puts "Done with the tours"
