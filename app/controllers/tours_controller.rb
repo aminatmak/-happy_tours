@@ -16,6 +16,7 @@ class ToursController < ApplicationController
 
   def show
     authorize @tour
+    @booking = Booking.new
     # set_tour method is responsible to find
   end
 
