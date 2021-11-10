@@ -33,10 +33,10 @@ class TourPolicy < ApplicationPolicy
   end
 
   def admin?
-    user.admin
+    @user.admin
   end
 
   def owner?
-    record.user == user
+    @record.user == @user
   end
 end

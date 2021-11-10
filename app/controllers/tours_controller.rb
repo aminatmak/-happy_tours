@@ -4,10 +4,19 @@ class ToursController < ApplicationController
 
   def index
     @tours = policy_scope(Tour).order(created_at: :asc)
+
+    @markers = @tours.geocoded.map do |tour|
+      {
+        lat: tour.latitude,
+        lng: tour.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tour: tour })
+      }
+    end
   end
 
   def show
     authorize @tour
+    @booking = Booking.new
     # set_tour method is responsible to find
   end
 
@@ -50,6 +59,6 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :category, :price, :description, :start_date, :end_date, :user_id, photos: [])
+    params.require(:tour).permit(:title, :category, :price, :description, :start_date, :end_date, :address, photos: [])
   end
 end
