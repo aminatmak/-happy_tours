@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2371&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1538509372302-dc95677545c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
   <h1>HAPPY TOURS</h1>
   <p>Reconnect to your world with us!</p>
   <div class="row justify-content-center">
@@ -6,33 +6,130 @@
       </div>
 </div>
 
-<div class="container position absolute">
-  <div class="row">
-    <div class="row justify-content-center">
-      <h1>Top 3 Tours in Dubai</h1>
-      <div class="cards">
-        <% @tours.each do |tour| %>
-          <%= link_to tour do %>
-            <div class="card-category position relative", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path tour.photos.first.key %>); mx-3">
-              <%= tour.title %>
-            </div>
-          <% end %>
-        <% end %>
+<%# section for cards - top 3 %>
+<section class="pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="row justify-content-center">
+        <h1><span class="text_color">Top 3 Tours in Dubai</span></h1>
+        <div class="cards">
+          <% @tours.each do |tour| %>
+            <%= link_to tour do %>
+              <div class="card-category position relative", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path tour.photos.first.key %>); mx-3">
+                <%= tour.title %>
               </div>
-              <div style="text-align:center">
-                <p class="lead text-gray-700 mb-7 mb-md-9">
-                    Book the best, most entertaining tours in Dubai with
-                    Happy Tours!
-                    Since the creation of Happy Tours... last wek, we have
-                    been tirelessly dedicated to bringing the best touring
-                    experience straight to your browser, so you can
-                    effortlessly focus on enjoying your life in Dubai!
-                    Happy Tours happily brings you a wide range of tours,
-                    from Extreme adventures and sports to Half-Day tours
-                    at the beach; Happy Tours has a tour for
-                  <span class="text-primary">EVERYONE</span>
-            </p>
+            <% end %>
+          <% end %>
+            </div>
+            <section class="pt-5" id="payItDown">
+              <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                        <!-- Badge -->
+
+
+                        <!-- Heading -->
+                        <h1>
+                          Enjoy your vacation, <span class="text_color">leave the work to us.</span>
+                        </h1>
+
+                        <!-- Text -->
+                        <p class="lead text-gray-700 mb-5">
+                          Book the best, most entertaining tours in Dubai with
+                                Happy Tours!
+                        </p>
+
+                      </div>
+                    </div> <!-- / .row -->
+                    <div class="row align-items-center">
+                      <div class="col-12 col-md-6 col-lg-7">
+
+                        <!-- Screenshot -->
+                        <div class="mb-5 mb-md-0">
+
+                          <!-- Image -->
+                          <img src="https://images.unsplash.com/photo-1462007895615-c8c073bebcd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="..." class="screenshot">
+
+                        </div>
+
+                      </div>
+                      <div class="col-12 col-md-5 col-lg-5">
+
+                        <!-- List -->
+                        <div class="d-flex align-items-start">
+                          <i class="fas fa-thumbs-up text_color mx-3 my-2"></i>
+                          <!-- Body -->
+                          <div class="ms-5">
+
+                            <!-- Heading -->
+                            <h3>
+
+                            <span class="text_color">
+                              Book tours
+                            </span>
+                            </h3>
+
+                            <!-- Text -->
+                            <p class="text-gray-700 mb-5">
+                              It takes no time at all to sign-up and find the best tours in Dubai!
+                            </p>
+
+                          </div>
+
+                        </div>
+                        <div class="d-flex align-items-start">
+                          <i class="fas fa-list text_color mx-3 my-2"></i>
+                          <!-- Body -->
+                          <div class="ms-5">
+
+                            <!-- Heading -->
+                            <h3>
+                              <span class="text_color">
+                                List your tours
+                              </span>
+                            </h3>
+
+                            <!-- Text -->
+                            <p class="text-gray-700 mb-5">
+                              Have a tour/event/meet-up planned? Sign up as a guest and watch the guests roll in.
+                            </p>
+
+                          </div>
+
+                        </div>
+                        <div class="d-flex align-items-start">
+                         <i class="fas fa-filter text_color mx-3 my-2"></i>
+
+                          <!-- Body -->
+                          <div class="ms-5">
+
+                            <!-- Heading -->
+                            <h3>
+
+                              <span class="text_color">
+                                Powerful filter
+                              </span>
+                            </h3>
+
+                            <!-- Text -->
+                            <p class="text-gray-700 mb-0">
+                              Use our filters to get the best deals on tours.
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div> <!-- / .row -->
+              </div> <!-- / .container -->
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<%# section for value proposition %>
