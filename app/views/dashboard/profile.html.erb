@@ -20,7 +20,7 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="past" role="tabpanel" aria-labelledby="past-tab">
 
-      <div class="card-category mb-10 mt-10" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/happy-tours/image/upload/v1636441361/development/images-12_cw6jjn.jpg)">
+      <div class="card-dashboard mb-10 mt-10" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1605311364334-723fff035793?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2681&q=80)">
         Past events
       </div>
       <main class="pb-8 pb-md-11 mt-md-n6">
@@ -36,53 +36,38 @@
                   <div class="card-body">
 
                     <!-- Heading -->
-                    <h6 class="fw-bold text-uppercase mb-3">
+                    <h6 class="fw-bold text-uppercase mb-3 d-flex justify-content-center">
                       Account
                     </h6>
-                      <div class="col-auto">
+                    <div class="col-auto my-3 d-flex justify-content-center">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-xl">
+                        <img class="avatar-img rounded-circle w-100" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+                      </div>
+                    </div>
 
-                          <!-- Avatar -->
-                          <div class="avatar avatar-xl">
-                            <img class="avatar-img rounded-circle" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-                          </div>
-                        </div>
                     <!-- List -->
-                    <ul class="card-list list text-gray-700 mb-6">
-                      <li class="list-item">
+                    <ul class="card-list list text-gray-700 mb-6" style="list-style: none;">
+                      <li class="llist-item mb-3">
+                        <h6 class="text-muted">Full Name</h6>
                         <a class="list-link text-reset" href="account-general.html">
-                          Personal information
+                          <%= current_user.first_name %> <%= current_user.last_name %>
                         </a>
                       </li>
-                      <li class="list-item">
+                      <li class="list-item mb-3">
+                        <h6 class="text-muted">Phone Number</h6>
                         <a class="list-link text-reset" href="account-security.html">
-                          Contact information
+                          <%= current_user.phone_number %>
                         </a>
                       </li>
                       <li class="list-item">
+                        <h6 class="text-muted">Anniversary</h6>
                         <a class="list-link text-reset" href="account-notifications.html">
-                          Notifications
+                          <%= current_user.birth_date %>
                         </a>
                       </li>
                     </ul>
 
-                    <!-- Heading -->
-                    <h6 class="fw-bold text-uppercase mb-3">
-                      Billing
-                    </h6>
-
-                    <!-- List -->
-                    <ul class="card-list list text-gray-700 mb-0">
-                      <li class="list-item">
-                        <a class="list-link text-reset" href="billing-plans-and-payment.html">
-                          Plans &amp; Payment
-                        </a>
-                      </li>
-                      <li class="list-item active">
-                        <a class="list-link text-reset" href="billing-users.html">
-                          Users
-                        </a>
-                      </li>
-                    </ul>
 
                   </div>
                 </div>
@@ -108,7 +93,7 @@
 
                       <!-- Button -->
 
-                      <%= link_to "Plan a trip", tours_path, class:"btn btn-xs btn-primary"%>
+                      <%= link_to "Plan a trip", tours_path, class:"btn btn-xs btn-purple"%>
 
                     </div>
                   </div>
@@ -117,30 +102,48 @@
 
                   <!-- List group -->
                   <div class="list-group list-group-flush">
-                    <div class="list-group-item">
+                    <% @bookings.each do |booking| %>
+                    <div class="list-group-item my-2">
                       <div class="row align-items-center">
+
+                        <div class="col-1">
+                          <div class="avatar">
+                            <%= cl_image_tag booking.tour.photos.first.key, class: "avatar-img rounded-circle w-100" %>
+                          </div>
+                        </div>
 
                         <div class="col-6 ms-n5">
 
+
                           <!-- Heading -->
                           <p class="mb-0">
-                            Al Ain
+                            <%= booking.tour.title %>
                           </p>
+
+
+                          <%# tag %>
+                          <span class="badge bg-primary text-white my-2"><%= booking.tour.category %></span>
 
                           <!-- Text -->
                           <a class="d-block small text-truncate text-gray-700" href="mailto:ab.hadley@company.com">
-                            Enjoy a scenic view with great company from the biggest ferris wheel in the world
+                            <%= booking.tour.description %>
                           </a>
 
                         </div>
-                        <div class="col-auto ms-auto">
+                        <div class="col-5 ms-auto" style="text-align: end;">
 
                           <!-- Select -->
-                          <div class="choices" data-type="select-one" tabindex="0" role="listbox" aria-haspopup="true" aria-expanded="false"><div class="form-select form-select-xs"><select class="form-select form-select-xs form-control" data-choices="" hidden="" tabindex="-1" data-choice="active"><option value="UAE 50">Admin</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__item--selectable" data-item="" data-id="1" data-value="UAE 50" data-custom-properties="null" aria-selected="true">AED 50</div></div></div><div class="choices__list dropdown-menu" aria-expanded="false"><div class="choices__list" role="listbox"><div id="choices--65uq-item-choice-1" class="choices__item dropdown-item active choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="Admin" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">AED 50</div><div id="choices--65uq-item-choice-2" class="choices__item dropdown-item choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Staff" data-select-text="Press to select" data-choice-selectable="">Staff</div><div id="choices--65uq-item-choice-3" class="choices__item dropdown-item choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Custom" data-select-text="Press to select" data-choice-selectable="">Custom</div></div></div></div>
+                          <%= link_to tour_path(booking.tour) do %>
+                            <h6 class="text-muted">See details</h6>
+                            <p class="text-bold mb-0">
+                              <%= booking.tour.start_date.strftime('%b %d, %Y') %> - <%= booking.tour.end_date.strftime('%b %d, %Y') %>
+                            </p>
+                          <% end %>
 
                         </div>
                       </div>
                     </div>
+                    <% end %>
 
                   </div>
 
@@ -155,7 +158,7 @@
 
     <div class="tab-pane fade" id="current" role="tabpanel" aria-labelledby="current-tab">
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/happy-tours/image/upload/v1636375669/development/snbfwq49qxcehagivu9w8r8ol04c.jpg)">
+      <div class="card-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/happy-tours/image/upload/v1636375669/development/snbfwq49qxcehagivu9w8r8ol04c.jpg)">
         Current events
       </div>
       <main class="pb-8 pb-md-11 mt-md-n6">
@@ -171,49 +174,34 @@
                   <div class="card-body">
 
                     <!-- Heading -->
-                    <h6 class="fw-bold text-uppercase mb-3">
+                    <h6 class="fw-bold text-uppercase mb-3 d-flex justify-content-center">
                       Account
                     </h6>
-
-                 <!-- Avatar -->
-                          <div class="avatar avatar-xl">
-                            <img class="avatar-img rounded-circle" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-                          </div>
+                    <div class="col-auto my-3 d-flex justify-content-center">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-xl">
+                        <img class="avatar-img rounded-circle w-100" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+                      </div>
+                    </div>
 
                     <!-- List -->
-                    <ul class="card-list list text-gray-700 mb-6">
-                      <li class="list-item">
+                    <ul class="card-list list text-gray-700 mb-6" style="list-style: none;">
+                      <li class="llist-item mb-3">
+                        <h6 class="text-muted">Full Name</h6>
                         <a class="list-link text-reset" href="account-general.html">
-                          Personal information
+                          <%= current_user.first_name %> <%= current_user.last_name %>
                         </a>
                       </li>
-                      <li class="list-item">
+                      <li class="list-item mb-3">
+                        <h6 class="text-muted">Phone Number</h6>
                         <a class="list-link text-reset" href="account-security.html">
-                          Contact information
+                          <%= current_user.phone_number %>
                         </a>
                       </li>
                       <li class="list-item">
+                        <h6 class="text-muted">Anniversary</h6>
                         <a class="list-link text-reset" href="account-notifications.html">
-                          Notifications
-                        </a>
-                      </li>
-                    </ul>
-
-                    <!-- Heading -->
-                    <h6 class="fw-bold text-uppercase mb-3">
-                      Billing
-                    </h6>
-
-                    <!-- List -->
-                    <ul class="card-list list text-gray-700 mb-0">
-                      <li class="list-item">
-                        <a class="list-link text-reset" href="billing-plans-and-payment.html">
-                          Plans &amp; Payment
-                        </a>
-                      </li>
-                      <li class="list-item active">
-                        <a class="list-link text-reset" href="billing-users.html">
-                          Users
+                          <%= current_user.birth_date %>
                         </a>
                       </li>
                     </ul>
@@ -241,7 +229,7 @@
                     <div class="col-auto">
 
                       <!-- Button -->
-                     <%= link_to "Plan a trip", tours_path, class:"btn btn-xs btn-primary"%>
+                     <%= link_to "Plan a trip", tours_path, class:"btn btn-xs btn-purple"%>
 
                     </div>
                   </div>
@@ -249,38 +237,50 @@
                 <div class="card-body">
 
                   <!-- List group -->
-                  <div class="list-group list-group-flush">
-                    <div class="list-group-item">
+                 <div class="list-group list-group-flush">
+                    <% @bookings.each do |booking| %>
+                    <div class="list-group-item my-2">
                       <div class="row align-items-center">
-                        <div class="col-auto">
 
-                          <!-- Avatar -->
-                          <div class="avatar avatar-xl">
-                            <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-1.jpg" alt="...">
+                        <div class="col-1">
+                          <div class="avatar">
+                            <%= cl_image_tag booking.tour.photos.first.key, class: "avatar-img rounded-circle w-100" %>
                           </div>
-
                         </div>
+
                         <div class="col-6 ms-n5">
+
 
                           <!-- Heading -->
                           <p class="mb-0">
-                            Al Ain
+                            <%= booking.tour.title %>
                           </p>
+
+
+                          <%# tag %>
+                          <span class="badge bg-primary text-white my-2"><%= booking.tour.category %></span>
 
                           <!-- Text -->
                           <a class="d-block small text-truncate text-gray-700" href="mailto:ab.hadley@company.com">
-                            Enjoy a scenic view with great company from the biggest ferris wheel in the world
+                            <%= booking.tour.description %>
                           </a>
 
                         </div>
-                        <div class="col-auto ms-auto">
+                        <div class="col-5 ms-auto" style="text-align: end;">
 
                           <!-- Select -->
-                          <div class="choices" data-type="select-one" tabindex="0" role="listbox" aria-haspopup="true" aria-expanded="false"><div class="form-select form-select-xs"><select class="form-select form-select-xs form-control" data-choices="" hidden="" tabindex="-1" data-choice="active"><option value="Admin">Admin</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__item--selectable" data-item="" data-id="1" data-value="Admin" data-custom-properties="null" aria-selected="true">Admin</div></div></div><div class="choices__list dropdown-menu" aria-expanded="false"><div class="choices__list" role="listbox"><div id="choices--65uq-item-choice-1" class="choices__item dropdown-item active choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="Admin" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">Admin</div><div id="choices--65uq-item-choice-2" class="choices__item dropdown-item choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Staff" data-select-text="Press to select" data-choice-selectable="">Staff</div><div id="choices--65uq-item-choice-3" class="choices__item dropdown-item choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Custom" data-select-text="Press to select" data-choice-selectable="">Custom</div></div></div></div>
+                          <%= link_to tour_path(booking.tour) do %>
+                            <h6 class="text-muted">See details</h6>
+                            <p class="text-bold mb-0">
+                              <%= booking.tour.start_date.strftime('%b %d, %Y') %> - <%= booking.tour.end_date.strftime('%b %d, %Y') %>
+                            </p>
+                          <% end %>
 
                         </div>
                       </div>
                     </div>
+                    <% end %>
+
                   </div>
 
                 </div>
@@ -294,7 +294,7 @@
 
     <div class="tab-pane fade" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
 
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/happy-tours/image/upload/v1636440747/development/images-6_caysjk.jpg)">
+      <div class="card-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/happy-tours/image/upload/v1636440747/development/images-6_caysjk.jpg)">
         Upcoming events
       </div>
       <main class="pb-8 pb-md-11 mt-md-n6">
@@ -310,47 +310,34 @@
                   <div class="card-body">
 
                     <!-- Heading -->
-                    <h6 class="fw-bold text-uppercase mb-3">
+                    <h6 class="fw-bold text-uppercase mb-3 d-flex justify-content-center">
                       Account
                     </h6>
+                    <div class="col-auto my-3 d-flex justify-content-center">
                       <!-- Avatar -->
-                          <div class="avatar avatar-xl">
-                            <img class="avatar-img rounded-circle" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-                          </div>
+                      <div class="avatar avatar-xl">
+                        <img class="avatar-img rounded-circle w-100" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+                      </div>
+                    </div>
+
                     <!-- List -->
-                    <ul class="card-list list text-gray-700 mb-6">
-                      <li class="list-item">
+                    <ul class="card-list list text-gray-700 mb-6" style="list-style: none;">
+                      <li class="llist-item mb-3">
+                        <h6 class="text-muted">Full Name</h6>
                         <a class="list-link text-reset" href="account-general.html">
-                          Personal information
+                          <%= current_user.first_name %> <%= current_user.last_name %>
                         </a>
                       </li>
-                      <li class="list-item">
+                      <li class="list-item mb-3">
+                        <h6 class="text-muted">Phone Number</h6>
                         <a class="list-link text-reset" href="account-security.html">
-                          Contact information
+                          <%= current_user.phone_number %>
                         </a>
                       </li>
                       <li class="list-item">
+                        <h6 class="text-muted">Anniversary</h6>
                         <a class="list-link text-reset" href="account-notifications.html">
-                          Notifications
-                        </a>
-                      </li>
-                    </ul>
-
-                    <!-- Heading -->
-                    <h6 class="fw-bold text-uppercase mb-3">
-                      Billing
-                    </h6>
-
-                    <!-- List -->
-                    <ul class="card-list list text-gray-700 mb-0">
-                      <li class="list-item">
-                        <a class="list-link text-reset" href="billing-plans-and-payment.html">
-                          Plans &amp; Payment
-                        </a>
-                      </li>
-                      <li class="list-item active">
-                        <a class="list-link text-reset" href="billing-users.html">
-                          Users
+                          <%= current_user.birth_date %>
                         </a>
                       </li>
                     </ul>
@@ -378,7 +365,7 @@
                     <div class="col-auto">
 
                       <!-- Button -->
-                    <%= link_to "Plan a trip", tours_path, class:"btn btn-xs btn-primary"%>
+                    <%= link_to "Plan a trip", tours_path, class:"btn btn-xs btn-purple"%>
 
                     </div>
                   </div>
@@ -387,37 +374,49 @@
 
                   <!-- List group -->
                   <div class="list-group list-group-flush">
-                    <div class="list-group-item">
+                    <% @bookings.each do |booking| %>
+                    <div class="list-group-item my-2">
                       <div class="row align-items-center">
-                        <div class="col-auto">
 
-                          <!-- Avatar -->
-                          <div class="avatar avatar-xl">
-                            <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-1.jpg" alt="...">
+                        <div class="col-1">
+                          <div class="avatar">
+                            <%= cl_image_tag booking.tour.photos.first.key, class: "avatar-img rounded-circle w-100" %>
                           </div>
-
                         </div>
+
                         <div class="col-6 ms-n5">
+
 
                           <!-- Heading -->
                           <p class="mb-0">
-                            Al Ain
+                            <%= booking.tour.title %>
                           </p>
+
+
+                          <%# tag %>
+                          <span class="badge bg-primary text-white my-2"><%= booking.tour.category %></span>
 
                           <!-- Text -->
                           <a class="d-block small text-truncate text-gray-700" href="mailto:ab.hadley@company.com">
-                            Enjoy a scenic view with great company from the biggest ferris wheel in the world
+                            <%= booking.tour.description %>
                           </a>
 
                         </div>
-                        <div class="col-auto ms-auto">
+                        <div class="col-5 ms-auto" style="text-align: end;">
 
                           <!-- Select -->
-                          <div class="choices" data-type="select-one" tabindex="0" role="listbox" aria-haspopup="true" aria-expanded="false"><div class="form-select form-select-xs"><select class="form-select form-select-xs form-control" data-choices="" hidden="" tabindex="-1" data-choice="active"><option value="Admin">Admin</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__item--selectable" data-item="" data-id="1" data-value="Admin" data-custom-properties="null" aria-selected="true">Admin</div></div></div><div class="choices__list dropdown-menu" aria-expanded="false"><div class="choices__list" role="listbox"><div id="choices--65uq-item-choice-1" class="choices__item dropdown-item active choices__item--selectable is-highlighted" role="option" data-choice="" data-id="1" data-value="Admin" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">Admin</div><div id="choices--65uq-item-choice-2" class="choices__item dropdown-item choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Staff" data-select-text="Press to select" data-choice-selectable="">Staff</div><div id="choices--65uq-item-choice-3" class="choices__item dropdown-item choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Custom" data-select-text="Press to select" data-choice-selectable="">Custom</div></div></div></div>
+                          <%= link_to tour_path(booking.tour) do %>
+                            <h6 class="text-muted">See details</h6>
+                            <p class="text-bold mb-0">
+                              <%= booking.tour.start_date.strftime('%b %d, %Y') %> - <%= booking.tour.end_date.strftime('%b %d, %Y') %>
+                            </p>
+                          <% end %>
 
                         </div>
                       </div>
                     </div>
+                    <% end %>
+
                   </div>
 
                 </div>
