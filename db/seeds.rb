@@ -42,7 +42,7 @@ tour1.photos.attach(io: file, filename: 'forest.jpg', content_type: 'image/jpg')
 file = URI.open('https://live.staticflickr.com/3775/13506330494_d8a950d2e0_b.jpg')
 tour1.photos.attach(io: file, filename: 'forest.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJzhJCaPGcVzp9s3s0snth_gUEMzouMiTmg&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1524373050940-8f19e9b858a9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80')
 tour1.photos.attach(io: file, filename: 'forest.jpg', content_type: 'image/jpg')
 
 tour1.user = user
@@ -62,10 +62,10 @@ tour2 = Tour.new(
 file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beach-quotes-1559667853.jpg')
 tour2.photos.attach(io: file, filename: 'beach.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBs2aYbp_8B0HStmEsIlOlmUYn4nnGL0uW5w&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1773&q=80')
 tour2.photos.attach(io: file, filename: 'beach.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcd8VZ7_imPwShHtyzeGBX_a8C6GkIgbHtIA&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80')
 tour2.photos.attach(io: file, filename: 'beach.jpg', content_type: 'image/jpg')
 
 
@@ -89,7 +89,7 @@ tour3.photos.attach(io: file, filename: 'bkclim.jpg', content_type: 'image/jpg')
 file = URI.open('https://images.unsplash.com/photo-1534350752840-1b1b71b4b4fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
 tour3.photos.attach(io: file, filename: 'bkclim.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-5-613J4AFTyQqpru8nczUhH-kHQfichDDg&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1421940943431-d392fcc1079f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1674&q=80')
 tour3.photos.attach(io: file, filename: 'bkclim.jpg', content_type: 'image/jpg')
 
 tour3.user = user
@@ -106,13 +106,13 @@ tour4 = Tour.new(
   user: user,
   address: "Burj Khalifa, Dubai"
 )
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_s0BOoOAwxJwVaTq_7Dhgc5naiIgQ2rQQ&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80')
 tour4.photos.attach(io: file, filename: 'roadtrip.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxAMH9Gt_MVg_CKl_54Y4xoy-Jm4n7C2WcA&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1476820865390-c52aeebb9891?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
 tour4.photos.attach(io: file, filename: 'roadtrip.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5m9CoZ93I4Qd0T6aMAIW2USHYbFjKodKroA&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1526478512290-5397e7d2ca6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80')
 tour4.photos.attach(io: file, filename: 'roadtrip.jpg', content_type: 'image/jpg')
 
 tour4.user = user
@@ -132,7 +132,7 @@ tour5 = Tour.new(
 file =URI.open('https://curlytales.com/wp-content/uploads/2020/10/Gokart.jpg')
 tour5.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6d36lpEMWetZb_xQophO4I1z7PVATpF7bg&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1537735107257-b0fec32b0ee2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
 tour5.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://media.istockphoto.com/photos/family-gokarts-picture-id801683778?b=1&k=20&m=801683778&s=170667a&w=0&h=BB7bXdQ7se7gkd8BT7kzSoCbSg5Jjqdg0rVhGy8T5as=')
@@ -155,14 +155,14 @@ tour6 = Tour.new(
   user: user,
   address: "Palm Jumeirah"
 )
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpFLzvld6QBmVNOnFvYqBYS39bxjhsxDa3GA&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80')
 tour6.photos.attach(io: file, filename: 'yacht.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB051kM_Jx-DzBEF6tKvNf11sCJYRxVnuIwA&usqp=CAU')
-tour6.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1744&q=80')
+tour6.photos.attach(io: file, filename: 'yacht.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB051kM_Jx-DzBEF6tKvNf11sCJYRxVnuIwA&usqp=CAU')
-tour6.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
+file = URI.open('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80')
+tour6.photos.attach(io: file, filename: 'yacht.jpg', content_type: 'image/jpg')
 
 tour6.user = user
 tour6.save
