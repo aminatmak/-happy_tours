@@ -3,8 +3,14 @@ class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tours = policy_scope(Tour).order(created_at: :asc)
-
+    if params[:search][:starts_at]
+      range = params[:search][:starts_at].match(/^(?<start_date>.{10})\s\w{2}\s(?<end_date>.{10})$/)
+      start_date = range[:start_date]
+      end_date = range[:end_date]
+      @tours = policy_scope(Tour).where('start_date >= ? AND end_date <= ?', start_date, end_date)
+    else
+      @tours = policy_scope(Tour).order(created_at: :asc)
+    end
     @markers = @tours.geocoded.map do |tour|
       {
         lat: tour.latitude,
@@ -12,6 +18,7 @@ class ToursController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { tour: tour })
       }
     end
+
   end
 
   def show
@@ -60,5 +67,19 @@ class ToursController < ApplicationController
 
   def tour_params
     params.require(:tour).permit(:title, :category, :price, :description, :start_date, :end_date, :address, photos: [])
+  end
+
+  def search_input
+    if params[:query].present?
+      sql_query = " \
+        tours.title @@ :query \
+        OR tours.category @@ :query \
+        OR tours.descrption @@ :query \
+        OR tours.price @@ :query \
+      "
+      @tours = Tour.joins(:director).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @tours = Tour.all
+    end
   end
 end
