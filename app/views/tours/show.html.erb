@@ -1,64 +1,66 @@
 <div class="container">
 
   <div class="card mb-3 border-0 bg-transparent">
+    <div class="position-absolute card-buttons justify-content-between">
+      <div class="d-flex justify-content-between align-items-center px-2">
+        <%= link_to 'Back', tours_path, class:"btn btn-secondary eraser" %>
+        <div class="card-button justify-content-between">
+          <% if user_signed_in? %>
+            <% if policy(@tour).edit? %>
+              <%= link_to 'Edit', edit_tour_path(@tour), class: 'btn btn-warning eraser' %> |
+            <% end %>
 
-    <h1 class="card-title"><%= @tour.title %></h1>
-    <%= cl_image_tag @tour.photos.first.key %>
-    <div class="card-body">
-    <div class="row">
-      <div class="col-7">
-        <div>
-          <h2>About</h2>
-          <h5 class="card-text">
-          <%= @tour.description %>
-          </h5>
-
-          <div class="category d-flex">
-            <h5 class="d-flex p-2 w-100 bd-highlight">Category:
-            <%= @tour.category %>
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-5">
-        <div class="card-date">
-          <div class="card-price d-flex justify-content-between text-bold flex-shrink-1 bd-highlight py-3 rounded">
-            <h5 class="card-trip-pricing d-flex text-bold flex-shrink-1 bd-highlight">AED<%= @tour.price %> </h5>
-            <div class="d-flex justify-content-between align-items-center">
-              <i class="card-star far fa-star pl-2"></i>
-              <h5 class="mb-0 px-2">5.0 (7 reviews)</h5>
-            </div>
-          </div>
-          <div class="justify-content-center align-items-center">
-            <p class="date">From:
-            <%= @tour.start_date.strftime('%A, %b %d') %>
-            </p>
-            <p class="date">To:
-            <%= @tour.end_date.strftime('%A, %b %d') %>
-            </p>
-          </div>
-
-          <%= simple_form_for [@tour, @booking] do |r| %>
-            <%= r.button :submit, class:"btn btn-primary w-100" %>
+            <!-- Only the owner of the tour can destroy -->
+            <% if policy(@tour).destroy? %>
+              <%= link_to 'Destroy', @tour, method: :delete, class: 'btn btn-danger eraser', data: { confirm: 'Are you sure?' } %>
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
+    <%= cl_image_tag @tour.photos.first.key %>
 
+    <div class="card-body">
+      <div class="row">
+        <div class="col-7">
+          <div>
+          <h1 class="card-title"><%= @tour.title %></h1>
+            <h5 class="card-text">
+            <%= @tour.description %>
+            </h5>
 
-      <div class="d-flex justify-content-start px-2">
-      <% if user_signed_in? %>
-        <% if policy(@tour).edit? %>
-          <%= link_to 'Edit', edit_tour_path(@tour), class: 'btn btn-warning' %> |
-        <% end %>
+            <div class="category d-flex">
+              <h5 class="d-flex p-2 w-100 bd-highlight">Category:
+              <%= @tour.category %>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="card-date">
+            <div class="card-price d-flex justify-content-between text-bold flex-shrink-1 bd-highlight py-3 rounded">
+              <h5 class="card-trip-pricing d-flex text-bold flex-shrink-1 bd-highlight">AED<%= @tour.price %> </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <i class="card-star far fa-star pl-2"></i>
+                <h5 class="mb-0 px-2">5.0 (7 reviews)</h5>
+              </div>
+            </div>
+            <div class="justify-content-center align-items-center">
+              <p class="date">From:
+              <%= @tour.start_date.strftime('%A, %b %d') %>
+              </p>
+              <p class="date">To:
+              <%= @tour.end_date.strftime('%A, %b %d') %>
+              </p>
+            </div>
 
-        <!-- Only the owner of the tour can destroy -->
-        <% if policy(@tour).destroy? %>
-          <%= link_to 'Destroy', @tour, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>|
-        <% end %>
-      <% end %>
-      <%= link_to 'Back', tours_path, class:"btn btn-secondary" %>
+            <%= simple_form_for [@tour, @booking] do |r| %>
+              <%= r.button :submit, class:"btn btn-primary w-100" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+
   </div>
 </div>

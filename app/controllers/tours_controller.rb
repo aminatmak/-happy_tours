@@ -3,7 +3,7 @@ class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search].present?
+    if params[:search][:starts_at]
       range = params[:search][:starts_at].match(/^(?<start_date>.{10})\s\w{2}\s(?<end_date>.{10})$/)
       start_date = range[:start_date]
       end_date = range[:end_date]
