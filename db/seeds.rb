@@ -59,14 +59,13 @@ tour2 = Tour.new(
   user: user,
   address: "Abu Dhabi, UAE"
 )
-file =
-URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beach-quotes-1559667853.jpg')
+file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beach-quotes-1559667853.jpg')
 tour2.photos.attach(io: file, filename: 'beach.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBs2aYbp_8B0HStmEsIlOlmUYn4nnGL0uW5w&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBs2aYbp_8B0HStmEsIlOlmUYn4nnGL0uW5w&usqp=CAU')
 tour2.photos.attach(io: file, filename: 'beach.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcd8VZ7_imPwShHtyzeGBX_a8C6GkIgbHtIA&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcd8VZ7_imPwShHtyzeGBX_a8C6GkIgbHtIA&usqp=CAU')
 tour2.photos.attach(io: file, filename: 'beach.jpg', content_type: 'image/jpg')
 
 
@@ -78,34 +77,19 @@ tour3 = Tour.new(
   title: 'Burj Khalifa Climb',
   category: 'Extreme',
   price: 20,
-  description: 'Anyone with nerves of steel and Dhs350 to spare can head up to Burj Khalifa’s 148th floor.
-
-It’s a different story altogether getting to the very top of the world’s tallest building, a vertigo-inducing honour reserved for a select few.
-
-To showcase just how complex it actually is to get to the highest tip, the Burj Khalifa team have launched three videos on their Instagram page that take us on a day in the life of one of the building’s technicians as he prepares to check the lightning arrester.
-
-In case you were wondering, this is the device used on electrical power systems to protect the insulation and conductors of a building when lightning strikes.
-
-You can just imagine what an easy target the Burj Khalifa is for Mother Nature when a sporadic but very wild storm hits Dubai.
-
-Luckily, the world’s tallest building has a unique system in place which senses the charge in the air and generates an opposite charge to attract the lightning into it.
-
-That doesn’t mean the lightning arrester on the Burj Khalifa’s spire doesn’t require maintenance.
-
-!',
+  description: 'Anyone with nerves of steel and Dhs350 to spare can head up to Burj Khalifa’s 148th floor. It’s a different story altogether getting to the very top of the world’s tallest building, a vertigo-inducing honour reserved for a select few. To showcase just how complex it actually is to get to the highest tip, the Burj Khalifa team have launched three videos on their Instagram page that take us on a day in the life of one of the building’s technicians as he prepares to check the lightning arrester. In case you were wondering, this is the device used on electrical power systems to protect the insulation and conductors of a building when lightning strikes. You can just imagine what an easy target the Burj Khalifa is for Mother Nature when a sporadic but very wild storm hits Dubai. Luckily, the world’s tallest building has a unique system in place which senses the charge in the air and generates an opposite charge to attract the lightning into it. That doesn’t mean the lightning arrester on the Burj Khalifa’s spire doesn’t require maintenance.',
   start_date: '2021/November/11',
   end_date: '2021/November/25',
   user: user,
   address: "Dubai Marina"
 )
-file =
-URI.open('https://www.izkiz.net/wp-content/uploads/2017/01/DSC_7356.jpg')
+file = URI.open('https://www.izkiz.net/wp-content/uploads/2017/01/DSC_7356.jpg')
 tour3.photos.attach(io: file, filename: 'bkclim.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKL26Ct6KhKLK5AO-GtpKt-7RqV4q_mWwqw&usqp=CAU')
+file = URI.open('https://images.unsplash.com/photo-1534350752840-1b1b71b4b4fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
 tour3.photos.attach(io: file, filename: 'bkclim.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-5-613J4AFTyQqpru8nczUhH-kHQfichDDg&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-5-613J4AFTyQqpru8nczUhH-kHQfichDDg&usqp=CAU')
 tour3.photos.attach(io: file, filename: 'bkclim.jpg', content_type: 'image/jpg')
 
 tour3.user = user
@@ -116,20 +100,19 @@ tour4 = Tour.new(
   title: 'Road trip',
   category: 'Bus Tours',
   price: 60,
-  description: 'Welcome to the city that has it all. Hop on our Dubai bus tour to experience a true fusion of traditional Arabian charm and futuristic dynamism. Enjoy panoramic views of Dubai's dramatic skyline, perfect sandy beaches and the world’s tallest building, Hop off to explore historical souks, forts and palaces, and enjoy ultra-chic dining and ambient nightlife. With Big Bus Dubai, you’ll taste it all.',
+  description: "Welcome to the city that has it all. Hop on our Dubai bus tour to experience a true fusion of traditional Arabian charm and futuristic dynamism. Enjoy panoramic views of Dubai's dramatic skyline, perfect sandy beaches and the world’s tallest building, Hop off to explore historical souks, forts and palaces, and enjoy ultra-chic dining and ambient nightlife. With Big Bus Dubai, you’ll taste it all.",
   start_date: '2021/November/23',
   end_date: '2021/November/24',
   user: user,
   address: "Burj Khalifa, Dubai"
 )
-file =
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_s0BOoOAwxJwVaTq_7Dhgc5naiIgQ2rQQ&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDk_s0BOoOAwxJwVaTq_7Dhgc5naiIgQ2rQQ&usqp=CAU')
 tour4.photos.attach(io: file, filename: 'roadtrip.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxAMH9Gt_MVg_CKl_54Y4xoy-Jm4n7C2WcA&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxAMH9Gt_MVg_CKl_54Y4xoy-Jm4n7C2WcA&usqp=CAU')
 tour4.photos.attach(io: file, filename: 'roadtrip.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5m9CoZ93I4Qd0T6aMAIW2USHYbFjKodKroA&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5m9CoZ93I4Qd0T6aMAIW2USHYbFjKodKroA&usqp=CAU')
 tour4.photos.attach(io: file, filename: 'roadtrip.jpg', content_type: 'image/jpg')
 
 tour4.user = user
@@ -140,24 +123,19 @@ tour5 = Tour.new(
   title: 'GO-KART',
   category: 'Theme Parks',
   price: 30,
-  description: 'If you enjoy the thrill of the go-kart racetrack, head straight to Kartdrome. This is Dubai’s primary go-karting track at an impressive 1.2 kilometres. With indoor and outdoor circuits and a fleet of leisure karts, Kartdrome is a sure-fire way to get your adrenaline pumping.
-
-Enjoy some marvellous racing in a safe environment, suitable for those aged seven and up. The karts offer a comfortable driving position, top-level performance and handling. Fitted with Honda engines which ensure equal acceleration, visitors can take on the international standard circuit at high speeds.
-
-There are 17 corners, a tunnel and a bridge to test even skilled drivers. If you’re a beginner, you may like to book the ‘Arrive & Drive’ rental sessions, where you can try karting for fun. The indoor circuit also hosts kids parties, private lessons and karting camps.',
+  description: 'If you enjoy the thrill of the go-kart racetrack, head straight to Kartdrome. This is Dubai’s primary go-karting track at an impressive 1.2 kilometres. With indoor and outdoor circuits and a fleet of leisure karts, Kartdrome is a sure-fire way to get your adrenaline pumping. Enjoy some marvellous racing in a safe environment, suitable for those aged seven and up. The karts offer a comfortable driving position, top-level performance and handling. Fitted with Honda engines which ensure equal acceleration, visitors can take on the international standard circuit at high speeds. There are 17 corners, a tunnel and a bridge to test even skilled drivers. If you’re a beginner, you may like to book the ‘Arrive & Drive’ rental sessions, where you can try karting for fun. The indoor circuit also hosts kids parties, private lessons and karting camps.',
   start_date: '2021/December/2',
   end_date: '2021/December/15',
   user: user,
   address: "Downtown Dubai"
 )
-file =
-URI.open('https://curlytales.com/wp-content/uploads/2020/10/Gokart.jpg')
+file =URI.open('https://curlytales.com/wp-content/uploads/2020/10/Gokart.jpg')
 tour5.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6d36lpEMWetZb_xQophO4I1z7PVATpF7bg&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6d36lpEMWetZb_xQophO4I1z7PVATpF7bg&usqp=CAU')
 tour5.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
-URI.open('https://media.istockphoto.com/photos/family-gokarts-picture-id801683778?b=1&k=20&m=801683778&s=170667a&w=0&h=BB7bXdQ7se7gkd8BT7kzSoCbSg5Jjqdg0rVhGy8T5as=')
+file = URI.open('https://media.istockphoto.com/photos/family-gokarts-picture-id801683778?b=1&k=20&m=801683778&s=170667a&w=0&h=BB7bXdQ7se7gkd8BT7kzSoCbSg5Jjqdg0rVhGy8T5as=')
 tour5.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
 tour5.user = user
@@ -171,21 +149,19 @@ tour6 = Tour.new(
   category: 'Half-day Tours',
   price: 250,
   description: 'Enjoy a taste of A-lister life without the high price tag—or anything to organize on your part—on this shared deluxe yacht cruise off Dubai. All you need do is step aboard, lounge on deck, and watch Dubai’s skyline and sights such as the Atlantis The Palm glide by; all as you enjoy the cool breezes and either breakfast or a barbecue meal depending on your chosen time slot. Choose from a morning, afternoon, or sunset tour and experience Dubai from a luxury yacht without the price tag. Become a VIP as you enter the yacht, enjoy a delicious meal on board the vessel and cruise the waters around Dubai. Perfect for families, couples, or groups of friends, the spacious yacht provides plenty of room to relax, meet new people, or simply sit back and take in the sensational views. Cruise around Dubai in a luxury yacht Great views of the city’s famous buildings and landmarks Have a luxury experience without the high price tag Relax and enjoy a meal and soft drinks onboard
-
-Read more about Dubai Marina Yacht Tour with Breakfast or BBQ 2021',
+  Read more about Dubai Marina Yacht Tour with Breakfast or BBQ 2021',
   start_date: '2021/December/1',
   end_date: '2022/January/15',
   user: user,
   address: "Palm Jumeirah"
 )
-file =
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpFLzvld6QBmVNOnFvYqBYS39bxjhsxDa3GA&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpFLzvld6QBmVNOnFvYqBYS39bxjhsxDa3GA&usqp=CAU')
 tour6.photos.attach(io: file, filename: 'yacht.jpg', content_type: 'image/jpg')
 
-URI.open('URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB051kM_Jx-DzBEF6tKvNf11sCJYRxVnuIwA&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB051kM_Jx-DzBEF6tKvNf11sCJYRxVnuIwA&usqp=CAU')
 tour6.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
-URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB051kM_Jx-DzBEF6tKvNf11sCJYRxVnuIwA&usqp=CAU')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB051kM_Jx-DzBEF6tKvNf11sCJYRxVnuIwA&usqp=CAU')
 tour6.photos.attach(io: file, filename: 'gokart.jpg', content_type: 'image/jpg')
 
 tour6.user = user
