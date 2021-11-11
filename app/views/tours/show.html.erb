@@ -69,7 +69,6 @@
                 <%= @tour.end_date.strftime('%A, %b %d') %>
                 </p>
               </div>
-
               <%= simple_form_for [@tour, @booking] do |r| %>
                 <%= r.button :submit, class:"btn btn-primary w-100" %>
               <% end %>

@@ -1,6 +1,20 @@
 
-<%= simple_form_for :search, method: "get" do |f| %>
-  <%= f.input :starts_at, input_html: { id: "range_start" } %>
-  <%= f.input :category, collection: Tour::CATEGORIES %>
-  <%= f.button :submit, "Go", class: "btn btn-ghost" %>
-<% end %>
+<h5>Search your favorite tour</h5>
+<div class="d-flex justify-content-between">
+  <div class="w-100">
+    <%= simple_form_for :search, method: "get" do |f| %>
+
+    <div class="form-inputs d-flex justify-content-between align-items-center">
+      <%= f.input :starts_at, label: false, input_html: { id: "range_start" }, placeholder: "Choose dates..." %>
+
+      <%= f.input :category, label: false, collection: Tour::CATEGORIES, class:"my-0", placeholder: "Choose category..." %>
+
+      <div class="form-group">
+        <%= f.button :submit, "Go", class: "btn btn-ghost" %>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+
+</div>

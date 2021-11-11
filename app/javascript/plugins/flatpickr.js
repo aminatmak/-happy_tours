@@ -7,9 +7,10 @@ const initFlatpickr = () => {
     altInput: true,
     allowInput: true,
     mode: "range",
-    defaultHour: "7",
+    defaultHour: "8",
     inline: false
   });
 }
+
 
 export { initFlatpickr };
